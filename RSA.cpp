@@ -27,9 +27,20 @@ unsigned long long getPrime(unsigned long long min, unsigned long long max)
 unsigned long long gcd(unsigned long long x, unsigned long long y)
 {
     unsigned long long gcdenom;
-    return gcdenom;
+    while((x % y) > 0)
+    {
+        gcdenom = x % y;
+        x = y;
+        y = gcdenom;
+    }
+    return y;
 }
-unsigned long long lcm(unsigned long long x, unsigned long long y);
+unsigned long long lcm(unsigned long long x, unsigned long long y)
+{
+    unsigned long long lcDenom;
+    
+    return lcDenom = (x*y)/gcd(x,y);
+}
 unsigned long long modInverse(unsigned long long e, unsigned long long lam);
 unsigned long long modExp(unsigned long long base,unsigned long long exp,unsigned long long n)
 {
